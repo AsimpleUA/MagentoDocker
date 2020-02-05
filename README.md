@@ -36,9 +36,9 @@ composer install
 
 ### 5. Setup magento
 
-### 5.1 Site: http://localhost:8080
+## 5.1 Site: http://localhost:8080
 
-### 5.2 PhpMyAdmin: http://localhost:8090
+## 5.2 PhpMyAdmin: http://localhost:8090
 
-### 5.3 Database: mysql://localhost:3307
+## 5.3 Database: mysql://localhost:3307
 
