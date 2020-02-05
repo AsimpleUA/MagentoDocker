@@ -40,5 +40,9 @@ composer install
 
 ### 5.2 PhpMyAdmin: http://localhost:8090
 
-### 5.3 Database: mysql://localhost:3307 (But in magento setup just "mysql")
-
+### 5.3 Database 
+#### 5.3.1 Default host: mysql://localhost:3307 (But in magento setup just "mysql")
+#### 5.3.2 Default user: mageuser 
+#### 5.3.3 Default password: magento1 
+#### 5.3.4 Default database: magento2  
+ 
