@@ -40,5 +40,5 @@ composer install
 
 ### 5.2 PhpMyAdmin: http://localhost:8090
 
-### 5.3 Database: mysql://localhost:3307
+### 5.3 Database: mysql://localhost:3307 (But in magento setup just "mysql")
 
