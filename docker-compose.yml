@@ -1,9 +1,43 @@
-version: "3"
+version: '3.3'
 services:
-  web:
-    build: ./
-    ports:
-      - "3116:3116"
-    command: bash -c "bundle exec rake db:migrate && bundle exec rails s -p 3116 --binding=0.0.0.0"
-    volumes:
-      - ./win_gg-backend:/www/betegy/win_gg-backend
+    nginx:
+        image: nginx:latest
+        container_name: nginx
+        ports:
+            - "8080:80"
+            - "443:443"
+        volumes:
+            - ./Nginx/core:/etc/nginx/conf.d
+            - ./Nginx/Logs:/var/log/nginx/
+            - ./Nginx/html:/usr/share/nginx/html/
+            - ./Magento:/var/www/magento2
+        links:
+            - php
+    mysql:
+        image: mysql:latest
+        ports:
+            - "3307:3306"
+        container_name: mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=magento2
+            - MYSQL_USER=mageuser
+            - MYSQL_PASSWORD=magento1
+        volumes:
+            - ./MySQL:/var/lib/mysql
+    php:
+        build: ./PHP/
+        container_name: php-fpm
+        volumes:
+            - ./Magento:/var/www/magento2
+        links:
+            - mysql
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin
+        environment:
+            - PMA_PORT=3307
+        ports:
+            - 8090:80
+        links:
+            - mysql:db

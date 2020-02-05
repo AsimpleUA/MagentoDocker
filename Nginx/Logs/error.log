@@ -1,0 +1,1 @@
+2020/02/05 12:49:17 [error] 7#7: *9 open() "/var/www/magento2/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: magento2.dev, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/"
