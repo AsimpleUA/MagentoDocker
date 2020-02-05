@@ -10,7 +10,7 @@ services:
             - ./Nginx/core:/etc/nginx/conf.d
             - ./Nginx/Logs:/var/log/nginx/
             - ./Nginx/html:/usr/share/nginx/html/
-            - ./Magento:/var/www/magento2
+            - ./magento:/var/www/magento2
         links:
             - php
     mysql:
@@ -29,7 +29,7 @@ services:
         build: ./PHP/
         container_name: php-fpm
         volumes:
-            - ./Magento:/var/www/magento2
+            - ./magento:/var/www/magento2
         links:
             - mysql
     phpmyadmin:
