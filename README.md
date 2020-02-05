@@ -1,38 +1,44 @@
 #Magento on Windows with Docker
 
-##1. Run this command once, after cloning:
+## 1. Run this command once, after cloning:
 ```
 docker-compose build
 ```
-##2. Create folder ./MySQL/
 
-##3. Run this command, to start server:
+
+## 2. Create folder ./MySQL/
+
+
+## 3. Run this command, to start server:
 ```
 docker-compose up
 ```
-##4. Prepare magento
 
-###4.1 Get php container id
+
+## 4. Prepare magento
+
+### 4.1 Get php container id
 ```
 docker ps
 ```
-###4.2 Open container terminal
+### 4.2 Open container terminal
 ```
 docker exec -it [container id] bash
 ```
-###4.3 Run command
+### 4.3 Run command
 ```
 composer install
 ```
-###4.4 Enter your magento credentials. 
+### 4.4 Enter your magento credentials. 
 
-###You can get them here(registration required):(https://marketplace.magento.com/customer/accessKeys/)
+### You can get them here(registration required):(https://marketplace.magento.com/customer/accessKeys/)
 
-###5. Setup magento
 
-###5.1 Site: http://localhost:8080
+### 5. Setup magento
 
-###5.2 PhpMyAdmin: http://localhost:8090
+### 5.1 Site: http://localhost:8080
 
-###5.3 Database: mysql://localhost:3307
+### 5.2 PhpMyAdmin: http://localhost:8090
+
+### 5.3 Database: mysql://localhost:3307
 
