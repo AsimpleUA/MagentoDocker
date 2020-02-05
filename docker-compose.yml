@@ -1,0 +1,9 @@
+version: "3"
+services:
+  web:
+    build: ./
+    ports:
+      - "3116:3116"
+    command: bash -c "bundle exec rake db:migrate && bundle exec rails s -p 3116 --binding=0.0.0.0"
+    volumes:
+      - ./win_gg-backend:/www/betegy/win_gg-backend
